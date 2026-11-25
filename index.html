@@ -72,7 +72,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opa
 #cta h2 em{font-style:normal;color:var(--red);text-shadow:0 0 30px rgba(255,59,48,.35)}
 #cta p{color:#cfc6b8;max-width:460px;margin:0 auto 28px}
 #cta .row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px;transition:opacity .4s}
+.hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);white-space:nowrap;font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px;transition:opacity .4s}
 .hint i{width:1px;height:38px;background:linear-gradient(var(--neon),transparent);animation:drip 1.8s ease-in-out infinite}
 @keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 .progress{position:absolute;right:clamp(14px,2.4vw,30px);top:50%;transform:translateY(-50%);width:2px;height:120px;background:var(--line)}
@@ -213,6 +213,7 @@ footer{border-top:1px solid var(--line);padding:56px clamp(20px,5vw,64px) 30px}
   .timeline .rail{left:8px}
   .stage-item::before{left:-43px}
   #c3{top:auto;bottom:clamp(60px,10vh,110px)}
+  #c0{bottom:132px}
   .cap h2{font-size:34px}
   .progress{display:none}
   .logo small{display:none}
@@ -573,7 +574,7 @@ footer{border-top:1px solid var(--line);padding:56px clamp(20px,5vw,64px) 30px}
       pbar.style.height = (p * 100) + '%';
       lastP = p;
     }
-    nav.classList.toggle('solid', hero.getBoundingClientRect().bottom < 80);
+    nav.classList.toggle('solid', hero.getBoundingClientRect().bottom < innerHeight - 1);
     requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
